@@ -36,3 +36,38 @@ Average Number of Vehicles Sold by Vehicle Type:This bar chart displays the aver
 Total Expenditure Share by Vehicle Type During Recessions:This pie chart represents the total advertising expenditure share by vehicle type during recession periods.
 
 Effect of Unemployment Rate on Vehicle Type and Sales:This bar chart shows the effect of unemployment rate on automobile sales by vehicle type during recession periods.
+
+
+
+Requirements to create the expected Dashboard
+
+You will be creating two dropdown menus:
+
+The first dropdown allows selection of the report type (Yearly Statistics or Recession Period Statistics).
+
+The second dropdown is for selecting the year. This should be enabled only when the user selects Yearly Statistics report and will be disabled if Recession Period Statistics is selected.
+
+Each dropdown will be placed within a separate division.
+You can refer to this link for understanding the concept of dropdowns in plotly dash.
+
+App Layout: This define the layout of the app, including titles, dropdown menus, and containers for displaying output.
+
+Callback functions for Interactivity:
+
+Update Input Container:
+
+Here we define a callback function to update the input container based on the selected statistics.
+
+The purpose of this function is to control the state (enabled or disabled) of the year dropdown based on the user's selection of the report type.
+
+Specifically:
+
+Enabled (returns True) when Yearly Statistics is selected, allowing the user to choose a year.
+
+Disabled (returns False) when Recession Period Statistics is selected, preventing the user from selecting a year because it is irrelevant in the context of recession statistics.
+
+Callback for Plotting:
+
+Here we define a callback functions to update the output container based on selected statistics and year, creating various plots for the dashboard.
+
+The four plots have to be displayed in 2 rows, 2 column representation
