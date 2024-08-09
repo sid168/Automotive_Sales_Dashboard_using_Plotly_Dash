@@ -1,73 +1,87 @@
-# Automotive_sales
+# Automotive Sales Dashboard
 
+## Aim
+The aim of this project is to analyze historical trends in automobile sales, focusing on how these trends were affected during periods of recession. Specifically, the goal is to provide insights into the sales performance of XYZAutomotives, a company specializing in automotive sales, during economic downturns.
 
-The objective of this part of the Final Assignment is to analyze the historical trends in automobile sales during recession periods, as you did in the previous part. The goal is to provide insights into how the sales of XYZAutomotives, a company specializing in automotive sales, were affected during times of recession.
+This dashboard project serves as a demonstration of skills in creating visualizations using Plotly and Dash. The project involves preparing a report on findings from an analysis of automobile sales data, with two primary reports being developed:
 
-In this final assignment, you will have the opportunity to demonstrate the Dashboarding skills you have acquired in this course.
+1. **Yearly Automobile Sales Statistics**
+2. **Recession Period Statistics**
 
-This lab aims to assess your abilities in creating various visualizations using Plotly and Dash. As a data scientist, you have been given a task to prepare a report on your finding from Automobile Sales data analysis.
-You decided to develop a dashboard representing two main reports:-
+The analysis covers the period between 1980 and 2023.
 
-Yearly Automobile Sales Statistics
-Recession Period Statistics
-NOTE: Year range is between 1980 and 2013.
+## Components of the Report
 
-Components of the report items
+### 1. Yearly Automobile Sales Statistics
+This report includes the following visualizations:
 
-1. Yearly Automobile Sales Statistics
+- **Yearly Automobile Sales (Line Chart):** 
+  - Displays the average automobile sales for each year across the entire period.
 
-This report mainly consists of the following items:
+- **Total Monthly Automobile Sales (Line Chart):** 
+  - Shows the total monthly automobile sales for a selected year.
 
-Yearly Automobile Sales Using Line Chart for the Whole Period (line chart):This line chart displays the average automobile sales for each year across the entire period.
+- **Average Vehicles Sold by Vehicle Type (Bar Chart):** 
+  - Illustrates the average number of vehicles sold for each vehicle type in the selected year.
 
-Total Monthly Automobile Sales Using Line Chart (line chart):This line chart displays the total monthly automobile sales for the selected year.
+- **Total Advertisement Expenditure by Vehicle Type (Pie Chart):** 
+  - Represents the total advertising expenditure for each vehicle type in the selected year.
 
-Average Vehicles Sold by Vehicle Type in the Selected Year (bar chart):This bar chart shows the average number of vehicles sold for each vehicle type in the selected year.
+### 2. Recession Period Statistics
+This report includes the following visualizations:
 
-Total Advertisement Expenditure for Each Vehicle Using Pie Chart (pie chart):
-This pie chart represents the total advertising expenditure for each vehicle type in the selected year.
+- **Average Automobile Sales Fluctuation Over Recession Periods (Line Chart):** 
+  - Displays the average automobile sales for each year during recession periods.
 
-2. Recession Period Statistics
+- **Average Number of Vehicles Sold by Vehicle Type (Bar Chart):** 
+  - Shows the average number of vehicles sold for each vehicle type during recession periods.
 
-Average Automobile Sales Fluctuation Over Recession Period (Year-wise):This line chart shows the average automobile sales for each year during recession periods.
+- **Total Expenditure Share by Vehicle Type During Recessions (Pie Chart):** 
+  - Represents the total advertising expenditure share by vehicle type during recession periods.
 
-Average Number of Vehicles Sold by Vehicle Type:This bar chart displays the average number of vehicles sold for each vehicle type during recession periods.
+- **Effect of Unemployment Rate on Vehicle Type and Sales (Bar Chart):** 
+  - Illustrates the effect of the unemployment rate on automobile sales by vehicle type during recession periods.
 
-Total Expenditure Share by Vehicle Type During Recessions:This pie chart represents the total advertising expenditure share by vehicle type during recession periods.
+## Dashboard Requirements
 
-Effect of Unemployment Rate on Vehicle Type and Sales:This bar chart shows the effect of unemployment rate on automobile sales by vehicle type during recession periods.
+### Dropdown Menus
 
+Two dropdown menus are created for user interaction:
 
+1. **Report Type Selection:**
+   - Allows the user to choose between "Yearly Statistics" or "Recession Period Statistics."
 
-Requirements to create the expected Dashboard
+2. **Year Selection:**
+   - Enables the user to select a specific year, but only when "Yearly Statistics" is selected. This dropdown is disabled when "Recession Period Statistics" is chosen, as the year selection is not applicable.
 
-You will be creating two dropdown menus:
+### App Layout
+The app layout is structured to include titles, dropdown menus, and containers for displaying the output of the selected report type. The four visualizations are displayed in a 2x2 grid layout (2 rows and 2 columns).
 
-The first dropdown allows selection of the report type (Yearly Statistics or Recession Period Statistics).
+### Callback Functions for Interactivity
 
-The second dropdown is for selecting the year. This should be enabled only when the user selects Yearly Statistics report and will be disabled if Recession Period Statistics is selected.
+1. **Update Input Container:**
+   - A callback function controls the state (enabled or disabled) of the year dropdown based on the selected report type:
+     - If "Yearly Statistics" is selected, the year dropdown is enabled.
+     - If "Recession Period Statistics" is selected, the year dropdown is disabled.
 
-Each dropdown will be placed within a separate division.
-You can refer to this link for understanding the concept of dropdowns in plotly dash.
+2. **Callback for Plotting:**
+   - Callback functions are used to update the output container based on the selected report type and year. The relevant plots are generated and displayed within the dashboard.
 
-App Layout: This define the layout of the app, including titles, dropdown menus, and containers for displaying output.
+## Visualization Example
 
-Callback functions for Interactivity:
+Below is an example of how the dashboard might be structured:
 
-Update Input Container:
+```
+---------------------------------------------------
+|       Yearly Automobile Sales (Line Chart)      |
+---------------------------------------------------
+|       Total Monthly Sales (Line Chart)          |
+---------------------------------------------------
+|       Average Vehicles Sold (Bar Chart)         |
+---------------------------------------------------
+|       Advertisement Expenditure (Pie Chart)     |
+---------------------------------------------------
+```
 
-Here we define a callback function to update the input container based on the selected statistics.
-
-The purpose of this function is to control the state (enabled or disabled) of the year dropdown based on the user's selection of the report type.
-
-Specifically:
-
-Enabled (returns True) when Yearly Statistics is selected, allowing the user to choose a year.
-
-Disabled (returns False) when Recession Period Statistics is selected, preventing the user from selecting a year because it is irrelevant in the context of recession statistics.
-
-Callback for Plotting:
-
-Here we define a callback functions to update the output container based on selected statistics and year, creating various plots for the dashboard.
-
-The four plots have to be displayed in 2 rows, 2 column representation
+## Conclusion
+This dashboard provides a comprehensive view of how automobile sales have been impacted during different economic conditions, particularly during recession periods. By interacting with the dashboard, users can gain insights into the trends and make data-driven decisions based on historical sales performance.
